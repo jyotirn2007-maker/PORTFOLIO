@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jyoti Gupta — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Personal portfolio of Jyoti Gupta, B.Tech CSE Student at DTU. Built AI-powered solutions, machine learning projects, and UI/UX designs.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="#home">Jyoti Gupta</a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Hi, I'm <span class="accent">Jyoti Gupta</span></h1>
+          <p style="font-weight: 600; color: var(--text); margin-top: 0.5rem; font-size: 1.25rem;">B.Tech CSE Student at DTU</p>
+          <p class="lead">Building AI-powered solutions and intuitive digital experiences through code, design, and continuous learning.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn btn-outline" href="resume.pdf" target="_blank">Download Resume</a>
+            <a class="btn btn-outline" href="tel:+918873277087">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="profile.jpg" alt="Jyoti Gupta photo" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--muted); margin-bottom: 2rem;">
+          I'm a Computer Science student at Delhi Technological University (DTU) passionate about Artificial Intelligence, Machine Learning, Software Development, and UI/UX Design. I enjoy building practical projects that solve real-world problems while creating intuitive and user-friendly digital experiences. I continuously learn through hands-on projects, certifications, and design exploration.
+        </p>
+        <ul class="about-list">
+          <li><strong>College:</strong> Delhi Technological University (DTU)</li>
+          <li><strong>Location:</strong> Delhi, India</li>
+          <li><strong>Languages:</strong> English, Hindi</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skills-card">
+            <h3>Programming</h3>
+            <div class="skills">
+              <span class="skill">C</span>
+              <span class="skill">Python</span>
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+            </div>
+          </div>
+          <div class="skills-card">
+            <h3>AI & Machine Learning</h3>
+            <div class="skills">
+              <span class="skill">Machine Learning</span>
+              <span class="skill">Scikit-Learn</span>
+              <span class="skill">Pandas</span>
+              <span class="skill">NumPy</span>
+            </div>
+          </div>
+          <div class="skills-card">
+            <h3>Design</h3>
+            <div class="skills">
+              <span class="skill">Figma</span>
+              <span class="skill">Wireframing</span>
+              <span class="skill">Prototyping</span>
+              <span class="skill">UX Research</span>
+            </div>
+          </div>
+          <div class="skills-card">
+            <h3>Tools</h3>
+            <div class="skills">
+              <span class="skill">Git</span>
+              <span class="skill">GitHub</span>
+              <span class="skill">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Featured Projects</h2>
+
+        <div class="project-card">
+          <div class="project-info">
+            <h3>Student Performance Prediction System</h3>
+            <p>Built a machine learning-based web application that predicts student academic performance using attendance, study hours, assignment completion, and historical academic data.</p>
+            <p class="proj-meta"><strong>Tech:</strong> Python • Scikit-Learn • FastAPI • React</p>
+            <a class="btn btn-outline btn-sm" href="#" onclick="event.preventDefault(); alert('Project details link will be added later.');" style="margin-top: 0.5rem;">View Project Details</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-info">
+            <h3>TravelBuddy AI</h3>
+            <p class="proj-meta" style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; font-size: 1rem;">UI/UX Case Study</p>
+            <p>A complete UI/UX case study for an AI-powered travel planning application that helps users generate itineraries, manage budgets, discover destinations, and organize packing lists in one platform.</p>
+            <p class="proj-meta"><strong>Skills:</strong> Figma • UI Design • UX Research • Wireframing • Prototyping</p>
+            <a class="btn btn-sm" href="TravelBuddy_AI.pdf" target="_blank" style="margin-top: 0.5rem;">View Case Study</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section alt">
+      <div class="container">
+        <h2>Education & Certifications</h2>
+        <div class="grid-2">
+          <div>
+            <h3>Education</h3>
+            <div class="edu-card">
+              <h4>Delhi Technological University (DTU)</h4>
+              <p class="edu-degree">Bachelor of Technology</p>
+              <p class="edu-branch">Computer Science Engineering</p>
+              <p class="edu-year">2025 – 2029</p>
+            </div>
+          </div>
+          <div>
+            <h3>Certifications</h3>
+            <div class="certs-grid">
+              <div class="cert-card">
+                <img class="cert-thumb" src="jyoti_gupta_python.png" alt="Kaggle – Python certificate thumbnail" />
+                <div class="cert-info">
+                  <h4>Python</h4>
+                  <p class="cert-issuer">Kaggle</p>
+                  <a class="btn btn-outline btn-sm" href="jyoti_gupta_python.png" target="_blank">View Certificate</a>
+                </div>
+              </div>
+              <div class="cert-card">
+                <img class="cert-thumb" src="jyoti_gupta_intro_to_ml.png" alt="Kaggle – Intro to Machine Learning certificate thumbnail" />
+                <div class="cert-info">
+                  <h4>Intro to Machine Learning</h4>
+                  <p class="cert-issuer">Kaggle</p>
+                  <a class="btn btn-outline btn-sm" href="jyoti_gupta_intro_to_ml.png" target="_blank">View Certificate</a>
+                </div>
+              </div>
+              <div class="cert-card">
+                <img class="cert-thumb" src="jyoti_gupta_intro_to_dl.png" alt="Kaggle – Intro to Deep Learning certificate thumbnail" />
+                <div class="cert-info">
+                  <h4>Intro to Deep Learning</h4>
+                  <p class="cert-issuer">Kaggle</p>
+                  <a class="btn btn-outline btn-sm" href="jyoti_gupta_intro_to_dl.png" target="_blank">View Certificate</a>
+                </div>
+              </div>
+              <div class="cert-card">
+                <img class="cert-thumb" src="infosys_certificate_thumbnail.png" alt="Infosys Springboard – Explore Machine Learning Using Python certificate thumbnail" />
+                <div class="cert-info">
+                  <h4>Explore Machine Learning Using Python</h4>
+                  <p class="cert-issuer">Infosys Springboard</p>
+                  <a class="btn btn-outline btn-sm" href="infosys_certificate.pdf" target="_blank">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section">
+      <div class="container">
+        <h2>Achievements</h2>
+        <ul class="achievements-list">
+          <li>Built Machine Learning Projects</li>
+          <li>Designed TravelBuddy AI UI/UX Case Study</li>
+          <li>Completed Kaggle AI & ML Certifications</li>
+          <li>Actively Learning UI/UX Design and Web Development</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Email:</strong> <a href="mailto:jyotirn2007@gmail.com">jyotirn2007@gmail.com</a></p>
+        <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Phone:</strong> <a href="tel:+918873277087">+91 8873277087</a></p>
+        <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jyoti-gupta-642628366" target="_blank">linkedin.com/in/jyoti-gupta-642628366</a></p>
+        <p style="font-size: 1.05rem; margin-bottom: 2rem;"><strong>GitHub:</strong> <a href="https://github.com/jyotirn2007-maker" target="_blank">github.com/jyotirn2007-maker</a></p>
+
+        <h3>Quick message</h3>
+        <form class="contact-form">
+          <input type="text" placeholder="Your name" disabled />
+          <input type="email" placeholder="Your email" disabled />
+          <textarea placeholder="Your message" disabled></textarea>
+          <button class="btn" type="button" disabled style="opacity: 0.6; cursor: not-allowed;">Send (disabled)</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Jyoti Gupta. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/jyoti-gupta-642628366" target="_blank">LinkedIn</a>
+        <a href="https://github.com/jyotirn2007-maker" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // small script for menu toggle and year
+    document.querySelector('.menu-toggle')?.addEventListener('click', function(){
+      document.querySelector('.main-nav')?.classList.toggle('open');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
