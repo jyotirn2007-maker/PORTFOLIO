@@ -205,11 +205,14 @@
         <p style="font-size: 1.05rem; margin-bottom: 2rem;"><strong>GitHub:</strong> <a href="https://github.com/jyotirn2007-maker" target="_blank">github.com/jyotirn2007-maker</a></p>
 
         <h3>Quick message</h3>
-        <form class="contact-form">
-          <input type="text" placeholder="Your name" disabled />
-          <input type="email" placeholder="Your email" disabled />
-          <textarea placeholder="Your message" disabled></textarea>
-          <button class="btn" type="button" disabled style="opacity: 0.6; cursor: not-allowed;">Send (disabled)</button>
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="contactName" placeholder="Your name" required />
+          <input type="email" id="contactEmail" placeholder="Your email" required />
+          <textarea id="contactMessage" placeholder="Your message" required></textarea>
+          <button class="btn" type="submit" id="contactSubmitBtn">Send Message</button>
+          <div id="contactSuccessMsg" style="display: none; margin-top: 1rem; color: #10b981; font-weight: 600; font-size: 1.05rem;">
+            Thank you for reaching out! I'll get back to you soon.
+          </div>
         </form>
       </div>
     </section>
@@ -217,7 +220,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year">2026</span> Jyoti Gupta. All rights reserved.</p>
+      <p>Designed and Developed with ♡ Jyoti Gupta</p>
       <div class="socials">
         <a href="https://www.linkedin.com/in/jyoti-gupta-642628366" target="_blank">LinkedIn</a>
         <a href="https://github.com/jyotirn2007-maker" target="_blank">GitHub</a>
@@ -226,11 +229,35 @@
   </footer>
 
   <script>
-    // small script for menu toggle and year
+    // small script for menu toggle and form submission
     document.querySelector('.menu-toggle')?.addEventListener('click', function(){
       document.querySelector('.main-nav')?.classList.toggle('open');
     });
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('contactName')?.value;
+      const email = document.getElementById('contactEmail')?.value;
+      const message = document.getElementById('contactMessage')?.value;
+      
+      if (name && email && message) {
+        const successMsg = document.getElementById('contactSuccessMsg');
+        if (successMsg) {
+          successMsg.style.display = 'block';
+          
+          // Clear form fields
+          document.getElementById('contactName').value = '';
+          document.getElementById('contactEmail').value = '';
+          document.getElementById('contactMessage').value = '';
+          
+          // Auto-hide success message after 5 seconds
+          setTimeout(() => {
+            successMsg.style.display = 'none';
+          }, 5000);
+        }
+      }
+    });
   </script>
 </body>
 </html>
