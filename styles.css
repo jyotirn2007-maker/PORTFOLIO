@@ -175,30 +175,29 @@ body.dark-mode .theme-btn:hover {
 }
 
 .hero-text h1 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-weight: 300;
   font-size: 2.75rem;
   margin: 0;
-  line-height: 1.25;
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--muted);
 }
 
 .hero-text h1 .accent {
-  font-family: 'Space Grotesk', sans-serif;
-  font-style: normal;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
   font-weight: 500;
-  letter-spacing: -0.01em;
-  font-size: 1.12em;
+  letter-spacing: 0.02em;
+  font-size: 1.3em;
 }
 
 .hero-subtitle {
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  font-size: 0.98rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #374151;
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
