@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jyoti Gupta — Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <meta name="description" content="Personal portfolio of Jyoti Gupta, B.Tech CSE Student at DTU. Built AI-powered solutions, machine learning projects, and UI/UX designs.">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <a href="#home">Jyoti Gupta</a>
+        <a href="#home">
+          <img src="logo.png" alt="JG Logo" class="brand-logo" />
+        </a>
       </div>
       <nav class="main-nav">
         <ul>
@@ -229,7 +234,10 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>Designed and Developed with ♡ Jyoti Gupta</p>
+      <div class="footer-content">
+        <p class="footer-line-1">Designed and Developed with <span class="heart">♡</span></p>
+        <p class="footer-line-2">Jyoti Gupta • CSE @ DTU • Developer & ML Enthusiast</p>
+      </div>
       <div class="socials">
         <a href="https://www.linkedin.com/in/jyoti-gupta-642628366" target="_blank">LinkedIn</a>
         <a href="https://github.com/jyotirn2007-maker" target="_blank">GitHub</a>
@@ -271,34 +279,83 @@
       }
     });
 
-    // small script for menu toggle and form submission
+    // small script for menu toggle
     document.querySelector('.menu-toggle')?.addEventListener('click', function(){
       document.querySelector('.main-nav')?.classList.toggle('open');
     });
 
+    // Form submission with FormSubmit API and success page transition
     document.getElementById('contactForm')?.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const name = document.getElementById('contactName')?.value;
-      const email = document.getElementById('contactEmail')?.value;
-      const message = document.getElementById('contactMessage')?.value;
+      const name = document.getElementById('contactName')?.value.trim();
+      const email = document.getElementById('contactEmail')?.value.trim();
+      const message = document.getElementById('contactMessage')?.value.trim();
+      const submitBtn = document.getElementById('contactSubmitBtn');
+      const form = document.getElementById('contactForm');
       
-      if (name && email && message) {
-        const successMsg = document.getElementById('contactSuccessMsg');
-        if (successMsg) {
-          successMsg.style.display = 'block';
-          
-          // Clear form fields
-          document.getElementById('contactName').value = '';
-          document.getElementById('contactEmail').value = '';
-          document.getElementById('contactMessage').value = '';
-          
-          // Auto-hide success message after 5 seconds
-          setTimeout(() => {
-            successMsg.style.display = 'none';
-          }, 5000);
-        }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        return;
       }
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // Set loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.7';
+      }
+      
+      // Submit via FormSubmit Ajax
+      fetch('https://formsubmit.co/ajax/jyotirn2007@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+          _subject: "New Portfolio Message from " + name
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Form submission failed.');
+      })
+      .then(data => {
+        // Success: Replace the form with the success message
+        const formContainer = form.parentElement;
+        if (formContainer) {
+          formContainer.innerHTML = `
+            <h3>Quick message</h3>
+            <div class="success-box" style="padding: 2.5rem; border-radius: var(--radius); background: var(--card); border: 1px solid var(--border); box-shadow: 0 4px 12px var(--shadow); margin-top: 1.5rem; text-align: center; transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
+              <p style="font-size: 1.15rem; font-family: 'Outfit', sans-serif; font-weight: 600; color: var(--accent); margin: 0; line-height: 1.5; letter-spacing: 0.02em;">
+                Thanks for stopping by✨ Looking forward to connecting with you!
+              </p>
+            </div>
+          `;
+        }
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        alert('Failed to send the message. Please check your internet connection and try again.');
+        
+        // Reset button state
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+          submitBtn.style.opacity = '1';
+        }
+      });
     });
   </script>
 </body>
