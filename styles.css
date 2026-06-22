@@ -175,7 +175,7 @@ body.dark-mode .theme-btn:hover {
 }
 
 .hero-text h1 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 2.75rem;
   margin: 0;
@@ -184,27 +184,27 @@ body.dark-mode .theme-btn:hover {
 }
 
 .hero-text h1 .accent {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  font-size: 1.3em;
+  font-family: 'Clash Display', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 1.12em;
 }
 
 .hero-subtitle {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 1.15rem;
-  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #374151;
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
 }
 
 body.dark-mode .hero-subtitle {
-  color: var(--accent-2);
+  color: #ffffff;
 }
 
 .lead {
